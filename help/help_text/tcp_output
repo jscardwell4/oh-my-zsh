@@ -1,0 +1,8 @@
+
+TCP_OUTPUT
+       May be set directly.  If a non-empty string, any data sent to  a
+       session  by  tcp_send  will be logged.  This parameter gives the
+       prompt to be used in a file specified by $TCP_LOG but not  in  a
+       file  generated  from  $TCP_LOG_SESS.  The prompt string has the
+       same format as TCP_PROMPT and the same rules for its use  apply.
+

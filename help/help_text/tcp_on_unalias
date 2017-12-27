@@ -1,0 +1,5 @@
+
+tcp_on_unalias alias fd
+       This  is  called with the name of an alias and the corresponding
+       session's file descriptor after an alias has been deleted.
+

@@ -1,0 +1,24 @@
+
+zfsession [ -lvod ] [ sessname ]
+       Allows you to manage multiple FTP sessions at once.  By default,
+       connections  take place in a session called `default'; by giving
+       the command `zfsession sessname' you can  change  to  a  new  or
+       existing  session  with  a name of your choice.  The new session
+       remembers its own connection, as well as associated shell param-
+       eters, and also the host/user parameters set by zfparams.  Hence
+       you can have different sessions set up to connect  to  different
+       hosts, each remembering the appropriate host, user and password.
+
+       With no arguments, zfsession prints the name of the current ses-
+       sion;  with  the option -l it lists all sessions which currently
+       exist, and with the option -v it gives a  verbose  list  showing
+       the  host and directory for each session, where the current ses-
+       sion is marked with an asterisk.  With -o, it will switch to the
+       most recent previous session.
+
+       With -d, the given session (or else the current one) is removed;
+       everything to do with it is completely forgotten.  If it was the
+       only session, a new session called `default' is created and made
+       current.  It is safest not to delete sessions  while  background
+       commands using zftp are active.
+

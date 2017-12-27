@@ -1,0 +1,8 @@
+
+zfrtime lfile rfile [ time ]
+       Set the local file lfile to have the same modification  time  as
+       the  remote  file rfile, or the explicit time time in FTP format
+       CCYYMMDDhhmmSS for the GMT  timezone.   This  uses  the  shell's
+       zsh/datetime  module to perform the conversion from GMT to local
+       time.
+

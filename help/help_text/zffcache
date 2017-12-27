@@ -1,0 +1,5 @@
+
+zffcache
+       This is used to implement caching of files in the current direc-
+       tory for each session separately.  It is used by zfget match and
+       zfrglob.

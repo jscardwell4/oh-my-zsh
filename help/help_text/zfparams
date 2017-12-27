@@ -1,0 +1,14 @@
+zfparams [ host [ user [ password ... ] ] ]
+       Set or show the parameters for a future  zfopen  with  no  argu-
+       ments.   If  no  arguments are given, the current parameters are
+       displayed (the password will be shown as a line  of  asterisks).
+       If a host is given, and either the user or password is not, they
+       will be prompted for; also, any parameter given as `?'  will  be
+       prompted  for, and if the `?' is followed by a string, that will
+       be used as the prompt.  As zfopen calls zfparams  to  store  the
+       parameters, this usually need not be called directly.
+
+       A  single  argument `-' will delete the stored parameters.  This
+       will also cause the memory of the last directory (and so on)  on
+       the other host to be deleted.
+

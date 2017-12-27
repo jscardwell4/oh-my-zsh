@@ -1,0 +1,19 @@
+
+tcp_talk
+       This  is  a  fairly  simple-minded attempt to force input to the
+       line editor to go straight to the default TCP_SESSION.
+
+       An escape string, $TCP_TALK_ESCAPE,  default  `:',  is  used  to
+       allow  access to normal shell operation.  If it is on its own at
+       the start of the line, or followed only by whitespace, the  line
+       editor  returns  to normal operation.  Otherwise, the string and
+       any following whitespace are skipped and the  remainder  of  the
+       line executed as shell input without any change of the line edi-
+       tor's operating mode.
+
+       The current implementation is somewhat deficient in terms of use
+       of the command history.  For this reason, many users will prefer
+       to use some form of alternative approach for sending data easily
+       to  the  current  session.  One simple approach is to alias some
+       special character (such as `%') to `tcp_command --'.
+

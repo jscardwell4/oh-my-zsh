@@ -1,0 +1,23 @@
+
+zfdir [ -rfd ] [ - ] [ dir-options ] [ dir ]
+       Produce a long directory listing.  The arguments dir-options and
+       dir are passed directly to the server and their effect is imple-
+       mentation dependent, but specifying a particular  remote  direc-
+       tory  dir  is  usually possible.  The output is passed through a
+       pager given by the environment variable  $PAGER,  or  `more'  if
+       that is not set.
+
+       The directory is usually cached for re-use.  In fact, two caches
+       are maintained.  One is for use when there is no dir-options  or
+       dir,  i.e. a full listing of the current remote directory; it is
+       flushed when the current remote directory changes.  The other is
+       kept  for  repeated  use  of  zfdir with the same arguments; for
+       example, repeated use of `zfdir /pub/gnu' will only require  the
+       directory  to  be  retrieved  on the first call.  Alternatively,
+       this cache can be re-viewed with the  -r  option.   As  relative
+       directories  will  confuse  zfdir,  the -f option can be used to
+       force the cache to be flushed before the  directory  is  listed.
+       The  option  -d will delete both caches without showing a direc-
+       tory listing; it will also delete the cache of file names in the
+       current remote directory, if any.
+

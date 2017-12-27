@@ -1,0 +1,4 @@
+getln [ -AclneE ] name ...
+                  ----
+       Read the top value from the buffer stack and put it in the shell
+       parameter name.  Equivalent to read -zr.

@@ -1,0 +1,307 @@
+zle
+zle -l [ -L | -a ] [ string ... ]
+zle -D widget ...
+zle -A old-widget new-widget
+zle -N widget [ function ]
+zle -C widget completion-widget function
+zle -R [ -c ] [ display-string ] [ string ... ]
+zle -M string
+zle -U string
+zle -K keymap
+zle -F [ -L | -w ] [ fd [ handler ] ]
+zle -I
+zle -T [ tc function | -r tc | -L ]
+zle widget [ -n num ] [ -Nw ] [ -K keymap ] args ...
+       The  zle builtin performs a number of different actions concern-
+       ing ZLE.
+
+       With no options and no arguments, only the return status will be
+       set.  It is zero if ZLE is currently active and widgets could be
+       invoked using this builtin command and non-zero otherwise.  Note
+       that  even  if  non-zero  status  is  returned, zle may still be
+       active as part of the completion system;  this  does  not  allow
+       direct calls to ZLE widgets.
+
+       Otherwise, which operation it performs depends on its options:
+
+       -l [ -L | -a ]
+              List all existing user-defined widgets.  If the -L option
+              is used, list in the form of zle commands to  create  the
+              widgets.
+
+              When  combined  with  the -a option, all widget names are
+              listed, including the builtin ones. In this case  the  -L
+              option is ignored.
+
+              If  at least one string is given, and -a is present or -L
+              is not used, nothing will be printed.  The return  status
+              will be zero if all strings are names of existing widgets
+              and non-zero if at least one string is not a  name  of  a
+              defined  widget.  If -a is also present, all widget names
+              are used for the comparison  including  builtin  widgets,
+              else only user-defined widgets are used.
+
+              If  at  least  one string is present and the -L option is
+              used, user-defined widgets matching any string are listed
+              in the form of zle commands to create the widgets.
+
+       -D widget ...
+              Delete the named widgets.
+
+       -A old-widget new-widget
+              Make the new-widget name an alias for old-widget, so that
+              both names refer to the  same  widget.   The  names  have
+              equal  standing; if either is deleted, the other remains.
+              If there is already a widget with the new-widget name, it
+              is deleted.
+
+       -N widget [ function ]
+              Create a user-defined widget.  If there is already a wid-
+              get with the specified name, it is overwritten.  When the
+              new  widget is invoked from within the editor, the speci-
+              fied shell function is called.  If no  function  name  is
+              specified,  it  defaults  to the same name as the widget.
+              For further information, see the section Widgets in  zsh-
+              zle(1).
+
+       -C widget completion-widget function
+              Create a user-defined completion widget named widget. The
+              completion widget will behave like the  built-in  comple-
+              tion-widget  whose name is given as completion-widget. To
+              generate the completions,  the  shell  function  function
+              will  be  called.   For further information, see zshcomp-
+              wid(1).
+
+       -R [ -c ] [ display-string ] [ string ... ]
+              Redisplay the command line; this is  to  be  called  from
+              within  a  user-defined widget to allow changes to become
+              visible.  If a display-string is  given  and  not  empty,
+              this  is  shown in the status line (immediately below the
+              line being edited).
+
+              If the optional strings are given they are  listed  below
+              the  prompt  in  the  same  way  as  completion lists are
+              printed. If no strings are given but  the  -c  option  is
+              used such a list is cleared.
+
+              Note  that this option is only useful for widgets that do
+              not exit immediately after using it because  the  strings
+              displayed  will  be  erased immediately after return from
+              the widget.
+
+              This command can safely be called  outside  user  defined
+              widgets; if zle is active, the display will be refreshed,
+              while if zle is not active, the command  has  no  effect.
+              In this case there will usually be no other arguments.
+
+              The status is zero if zle was active, else one.
+
+       -M string
+              As with the -R option, the string will be displayed below
+              the command line; unlike the -R option, the  string  will
+              not  be  put  into  the  status  line but will instead be
+              printed normally below the prompt.  This means  that  the
+              string  will  still be displayed after the widget returns
+              (until it is overwritten by subsequent commands).
+
+       -U string
+              This pushes the characters in the string onto  the  input
+              stack  of  ZLE.  After the widget currently executed fin-
+              ishes ZLE will behave as if the characters in the  string
+              were typed by the user.
+
+              As  ZLE  uses  a stack, if this option is used repeatedly
+              the last string pushed onto the stack will  be  processed
+              first.   However,  the  characters in each string will be
+              processed in the  order  in  which  they  appear  in  the
+              string.
+
+       -K keymap
+              Selects  the  keymap named keymap.  An error message will
+              be displayed if there is no such keymap.
+
+              This keymap selection affects the interpretation of  fol-
+              lowing  keystrokes  within  this  invocation of ZLE.  Any
+              following invocation (e.g., the next command  line)  will
+              start as usual with the `main' keymap selected.
+
+       -F [ -L | -w ] [ fd [ handler ] ]
+              Only  available if your system supports one of the `poll'
+              or `select' system calls; most modern systems do.
+
+              Installs handler (the name of a shell function) to handle
+              input from file descriptor fd.  When zle is attempting to
+              read data, it will examine both the terminal and the list
+              of  handled fd's.  If data becomes available on a handled
+              fd, zle will call handler with the fd which is ready  for
+              reading  as  the  only argument.  If the handler produces
+              output to the terminal, it should call  `zle  -I'  before
+              doing  so (see below).  The handler should not attempt to
+              read from the terminal.  Note that zle makes  no  attempt
+              to  check  whether  this  fd  is  actually  readable when
+              installing the handler.  The user  must  make  their  own
+              arrangements for handling the file descriptor when zle is
+              not active.
+
+              If the option -w is also given, the handler is instead  a
+              line  editor widget, typically a shell function made into
+              a widget using zle -N.  In that case handler can use  all
+              the facilities of zle to update the current editing line.
+              Note, however, that as handling fd takes place at  a  low
+              level  changes  to  the  display  will  not automatically
+              appear; the widget should call zle -R to force redisplay.
+
+              Any  number  of  handlers for any number of readable file
+              descriptors may be installed.  Installing a  handler  for
+              an  fd  which is already handled causes the existing han-
+              dler to be replaced.
+
+              If no handler is given, but an fd is present, any handler
+              for  that fd is removed.  If there is none, an error mes-
+              sage is printed and status 1 is returned.
+
+              If no arguments are given, or the -L option is  supplied,
+              a  list  of  handlers  is  printed in a form which can be
+              stored for later execution.
+
+              An fd (but not a handler) may optionally  be  given  with
+              the  -L  option; in this case, the function will list the
+              handler if any, else silently return status 1.
+
+              Note that this feature should be used with care.   Activ-
+              ity  on one of the fd's which is not properly handled can
+              cause the terminal to become unusable.
+
+              Here is a simple example of using this feature.   A  con-
+              nection  to  a  remote TCP port is created using the ztcp
+              command; see the description of the zsh/net/tcp module in
+              zshmodules(1).   Then a handler is installed which simply
+              prints out any data which  arrives  on  this  connection.
+              Note that `select' will indicate that the file descriptor
+              needs handling if the remote side has closed the  connec-
+              tion; we handle that by testing for a failed read.
+                     if ztcp pwspc 2811; then
+                       tcpfd=$REPLY
+                       handler() {
+                         zle -I
+                         local line
+                         if ! read -r line <&$1; then
+                           # select marks this fd if we reach EOF,
+                           # so handle this specially.
+                           print "[Read on fd $1 failed, removing.]" >&2
+                           zle -F $1
+                           return 1
+                         fi
+                         print -r - $line
+                       }
+                       zle -F $tcpfd handler
+                     fi
+
+       -I     Unusually,  this  option  is most useful outside ordinary
+              widget functions, though it may be used within if  normal
+              output  to  the terminal is required.  It invalidates the
+              current zle display in preparation for output;  typically
+              this  will  be from a trap function.  It has no effect if
+              zle is not active.  When a trap exits, the  shell  checks
+              to  see if the display needs restoring, hence the follow-
+              ing will print output in such a way as not to disturb the
+              line being edited:
+
+                     TRAPUSR1() {
+                         # Invalidate zle display
+                       [[ -o zle ]] && zle -I
+                         # Show output
+                       print Hello
+                     }
+
+              In  general,  the  trap function may need to test whether
+              zle is active before using this method (as shown  in  the
+              example),  since  the  zsh/zle  module  may  not  even be
+              loaded; if it is not, the command can be skipped.
+
+              It is possible to call `zle -I' several times before con-
+              trol  is returned to the editor; the display will only be
+              invalidated the first time to minimise disruption.
+
+              Note that there are normally better ways of  manipulating
+              the  display  from  within zle widgets; see, for example,
+              `zle -R' above.
+
+              The returned status is zero if zle was invalidated,  even
+              though  this may have been by a previous call to `zle -I'
+              or by a system notification.  To test if a zle widget may
+              be  called  at  this point, execute zle with no arguments
+              and examine the return status.
+
+       -T     This is used to add, list or remove internal  transforma-
+              tions on the processing performed by the line editor.  It
+              is typically used only for debugging or  testing  and  is
+              therefore of little interest to the general user.
+
+              `zle  -T  transformation  func'  specifies that the given
+              transformation (see below) is effected by shell  function
+              func.
+
+              `zle -Tr transformation' removes the given transformation
+              if it was present (it is not an error if none was).
+
+              `zle -TL' can be used to list  all  transformations  cur-
+              rently in operation.
+
+              Currently  the  only  transformation is tc.  This is used
+              instead of outputting  termcap  codes  to  the  terminal.
+              When  the  transformation is in operation the shell func-
+              tion is passed the termcap code that would be  output  as
+              its  first  argument; if the operation required a numeric
+              argument, that is passed as a second argument.  The func-
+              tion  should  set  the shell variable REPLY to the trans-
+              formed termcap code.  Typically this is used  to  produce
+              some  simply  formatted  version of the code and optional
+              argument for debugging or testing.  Note that this trans-
+              formation is not applied to other non-printing characters
+              such as carriage returns and newlines.
+
+       widget [ -n num ] [ -Nw ] [ -K keymap ] args ...
+              Invoke the specified widget.  This can only be done  when
+              ZLE   is   active;   normally   this  will  be  within  a
+              user-defined widget.
+
+              With the options -n and -N, the current  numerical  argu-
+              ment  will  be  saved and then restored after the call to
+              widget; `-n num' sets the numerical argument  temporarily
+              to  num,  while  `-N'  sets it to the default, i.e. as if
+              there were none.
+
+              With the option -K, keymap will be used  as  the  current
+              keymap  during the execution of the widget.  The previous
+              keymap will be restored when the widget exits.
+
+              Normally, calling a widget in this way does not  set  the
+              special  parameter WIDGET and related parameters, so that
+              the environment appears as if the top-level widget called
+              by  the user were still active.  With the option -w, WID-
+              GET and related parameters are set to reflect the  widget
+              being executed by the zle call.
+
+              Any  further arguments will be passed to the widget; note
+              that as standard argument handling is performed, any gen-
+              eral  argument list should be preceded by --.  If it is a
+              shell function,  these  are  passed  down  as  positional
+              parameters; for builtin widgets it is up to the widget in
+              question what it does with them.  Currently arguments are
+              only handled by the incremental-search commands, the his-
+              tory-search-forward and -backward and  the  corresponding
+              functions prefixed by vi-, and by universal-argument.  No
+              error is flagged if the command does not  use  the  argu-
+              ments, or only uses some of them.
+
+              The  return status reflects the success or failure of the
+              operation carried out by  the  widget,  or  if  it  is  a
+              user-defined  widget the return status of the shell func-
+              tion.
+
+              A non-zero return status causes the shell  to  beep  when
+              the  widget  exits,  unless the BEEP options was unset or
+              the widget was called via the zle  command.   Thus  if  a
+              user defined widget requires an immediate beep, it should
+              call the beep widget directly.

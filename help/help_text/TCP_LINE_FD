@@ -1,0 +1,6 @@
+
+TCP_LINE_FD
+       The   file   descriptor   from   which   $TCP_LINE   was   read.
+       ${tcp_by_fd[$TCP_LINE_FD]} will give the  corresponding  session
+       name.
+

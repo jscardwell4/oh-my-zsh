@@ -1,0 +1,10 @@
+
+zfcd match prefix suffix
+       This performs matching for completion of remote directory names.
+       If  the  remote  server is UNIX, it will attempt to persuade the
+       server to list the remote directory with subdirectories  marked,
+       which  usually  works  but is not guaranteed.  On other hosts it
+       simply calls zfget match and hence completes all files, not just
+       directories.   On  some  systems,  directories may not even look
+       like filenames.
+

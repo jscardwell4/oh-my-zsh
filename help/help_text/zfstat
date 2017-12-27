@@ -1,0 +1,7 @@
+
+zfstat [ -v ]
+       Show  the  status  of the current or last connection, as well as
+       the status of some of zftp's  status  variables.   With  the  -v
+       option,  a  more  verbose  listing  is  produced by querying the
+       server for its version of events, too.
+

@@ -1,0 +1,8 @@
+
+zfanon [ -1 ] host
+       Open  a connection host for anonymous FTP.  The username used is
+       `anonymous'.  The password (which will  be  reported  the  first
+       time)  is  generated  as  user@host;  this is then stored in the
+       shell parameter $EMAIL ADDR which can alternatively be set manu-
+       ally to a suitable string.
+

@@ -1,0 +1,9 @@
+# syntax: shell
+
+emulate -L zsh
+
+local applications applications_array expl
+
+applications=$(mdfind "kMDItemContentType == 'com.apple.application-*'")
+applications_array=(${${${(f)${applications}}:t}%.app})
+_wanted commands expl 'Mac OS X application' compadd -- $applications_array

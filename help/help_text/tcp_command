@@ -1,0 +1,13 @@
+
+tcp_command send-options ... send-arguments ...
+       This is a convenient front-end to tcp_send.  All  arguments  are
+       passed  to  tcp_send, then the function pauses waiting for data.
+       While data is arriving at least every $TCP_TIMEOUT (default 0.3)
+       seconds,  data  is handled and printed out according to the cur-
+       rent settings.  Status 0 is always returned.
+
+       This is generally only useful for interactive  use,  to  prevent
+       the display becoming fragmented by output returned from the con-
+       nection.  Within a programme or function it is generally  better
+       to handle reading data by a more explicit method.
+

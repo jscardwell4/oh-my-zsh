@@ -1,0 +1,12 @@
+
+zftp progress
+       This  function  shows  the  status of the transfer.  It will not
+       write anything unless the output is going to  a  terminal;  how-
+       ever,  if  you transfer files in the background, you should turn
+       off progress reports by hand using  `zstyle  ':zftp:*'  progress
+       none'.   Note  also  that if you alter it, any output must be to
+       standard error, as standard output may be a file being received.
+       The  form  of  the progress meter, or whether it is used at all,
+       can be configured without altering the function, as described in
+       the next section.
+

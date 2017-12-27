@@ -1,0 +1,6 @@
+
+tcp_on_close sess fd
+       This is called with the name of a session being closed  and  the
+       file  descriptor  which corresponded to that session.  Both will
+       be invalid by the time the function is called.
+

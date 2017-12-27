@@ -1,0 +1,26 @@
+# syntax: shell
+
+parse_objc_class_names() {
+
+    emulate -L zsh
+    local file="$@" newline=$'\\\n'
+
+    if [[ ! -e $file ]] {
+        print -- "parse_objc_class_names: $file is not a valid file or directory"
+        return
+    }
+
+    if [[ -d $file ]] {
+        names=(`grep -Ehro -e '@interface [A-Za-z_.]+' $file | sed -e 's/^@interface //' | sort | uniq`)
+        names=(`grep -Ehro -e "@class [^;(]+" $file | sed -e "s/@class //" -e "s/, /$newline/g" | sort | uniq` $names)
+        print -l -- ${names} | sort | uniq
+    } else {
+        names=(`grep -Eho -e '@interface [A-Za-z_.]+' "$file" | sed -e 's/^@interface //' | sort | uniq`)
+        print -l -- ${names}
+    }
+
+
+
+}
+
+parse_objc_class_names "$@"

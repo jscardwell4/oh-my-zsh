@@ -1,0 +1,19 @@
+
+tcp_alias [-q] alias=sess ...
+tcp_alias [-q] [ alias ] ...
+tcp_alias -d [-q] alias ...
+       This function is not particularly well tested.
+
+       The first form creates an alias for a session  name;  alias  can
+       then  be  used  to  refer to the existing session sess.  As many
+       aliases may be listed as required.
+
+       The second form lists any aliases specified, or all  aliases  if
+       none.
+
+       The  third  form deletes all the aliases listed.  The underlying
+       sessions are not affected.
+
+       The option -q suppresses  an  inconsistently  chosen  subset  of
+       error messages.
+

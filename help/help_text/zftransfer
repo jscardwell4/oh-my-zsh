@@ -1,0 +1,17 @@
+
+zftransfer sess1:file1 sess2:file2
+       Transfer files between two sessions; no local copy is made.  The
+       file is read from the session sess1 as file1 and written to ses-
+       sion sess2 as file file2; file1 and file2 may be relative to the
+       current directories of the session.  Either sess1 or  sess2  may
+       be  omitted  (though  the colon should be retained if there is a
+       possibility of a colon appearing in the file name) and  defaults
+       to  the  current session; file2 may be omitted or may end with a
+       slash, in which case the basename of file1 will be  added.   The
+       sessions sess1 and sess2 must be distinct.
+
+       The  operation  is performed using pipes, so it is required that
+       the connections still be valid in a subshell, which is  not  the
+       case under versions of some operating systems, presumably due to
+       a system bug.
+

@@ -1,0 +1,4 @@
+integer [ {+|-}Hghilprtux ] [ -LRZ [ n ]] [ name[=value] ... ]
+                                     -      ----  -----
+       Equivalent to typeset -i,  except  that  options  irrelevant  to
+       integers are not permitted.

@@ -1,0 +1,3 @@
+logout [ n ]
+         -
+       Same as exit, except that it only works in a login shell.

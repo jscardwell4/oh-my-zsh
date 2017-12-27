@@ -1,0 +1,51 @@
+
+tcp_read [-bdq] [ -t TO ] [ -T TO ]
+    [ -a | -u fd ... | -l sess,... | -s sess ...]
+       Perform a read operation on the current session, or on a list of
+       sessions if any are given with -u, -l or -s, or  all  open  ses-
+       sions  if  the  option  -a  is  given.   Any of the -u, -l or -s
+       options may be repeated or mixed together.  The -u option speci-
+       fies a file descriptor directly (only those managed by this sys-
+       tem are useful), the other two specify sessions as described for
+       tcp_open above.
+
+       The  function  checks for new data available on all the sessions
+       listed.  Unless the -b option is given, it will not block  wait-
+       ing  for  new data.  Any one line of data from any of the avail-
+       able sessions will be read, stored in the  parameter  $TCP_LINE,
+       and  displayed  to standard output unless $TCP_SILENT contains a
+       non-empty string.  When printed to standard  output  the  string
+       $TCP_PROMPT  will be shown at the start of the line; the default
+       form for this includes the name of the session being read.   See
+       below  for  more information on these parameters.  In this mode,
+       tcp_read can be called repeatedly  until  it  returns  status  2
+       which  indicates  all  pending input from all specified sessions
+       has been handled.
+
+       With the option -b, equivalent to an infinite timeout, the func-
+       tion  will  block  until a line is available to read from one of
+       the  specified  sessions.   However,  only  a  single  line   is
+       returned.
+
+       The  option  -d  indicates  that  all  pending  input  should be
+       drained.  In this case tcp_read may process  multiple  lines  in
+       the  manner  given  above; only the last is stored in $TCP_LINE,
+       but the complete set is stored in the array $tcp_lines.  This is
+       cleared at the start of each call to tcp_read.
+
+       The options -t and -T specify a timeout in seconds, which may be
+       a floating point number for increased  accuracy.   With  -t  the
+       timeout  is applied before each line read.  With -T, the timeout
+       applies to the overall operation,  possibly  including  multiple
+       read  operations  if  the  option  -d  is  present; without this
+       option, there is no distinction between -t and -T.
+
+       The function does not print informational messages, but  if  the
+       option  -q is given, no error message is printed for a non-exis-
+       tent session.
+
+       A return status of 2 indicates a timeout or  no  data  to  read.
+       Any other non-zero return status indicates some error condition.
+
+       See tcp_log for how to control where data is sent by tcp_read.
+

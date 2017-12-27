@@ -1,0 +1,73 @@
+#!/usr/local/bin/zsh
+# syntax: shell
+# cheatsheet
+# generates docset for use as Dash cheatsheet
+
+cheatsheet() {
+
+  emulate -L zsh
+
+  local DOCSET_NAME="$1"
+  local IDENTIFIER="$2"
+  local PUG_FILE="$3"
+  local DOCSET_HTTP="$DOCSET_NAME.docset/Contents/Resources/Documents/"
+
+  print -n -- "generating folder structure for $DOCSET_NAME..."
+  mkdir -p "$DOCSET_HTTP"
+  print -- "finished"
+
+  print -n -- "creating Info.plist..."
+
+  INFO="\
+<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\
+<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n\
+<plist version=\"1.0\">\n\
+<dict>\n\
+  <key>CFBundleIdentifier</key>\n\
+  <string>$IDENTIFIER</string>\n\
+  <key>CFBundleName</key>\n\
+  <string>$DOCSET_NAME</string>\n\
+  <key>DocSetPlatformFamily</key>\n\
+  <string>$IDENTIFIER</string>\n\
+  <key>isDashDocset</key>\n\
+  <true/>\n\
+</dict>\n\
+</plist>\
+"
+  print -- "$INFO" > "$DOCSET_NAME".docset/Contents/Info.plist
+
+  print -- "finished"
+
+  print -n -- "rending $PUG_FILE to $DOCSET_HTTP..."
+
+  pug -P -o "$DOCSET_HTTP"/ "$PUG_FILE"
+
+  mv "$DOCSET_HTTP"/*.html "$DOCSET_HTTP"/index.html
+
+  print -- "finished"
+
+  print -n -- "copying additional resources to $DOCSET_HTTP..."
+
+  cp -R  "$ZSH/resources/cheatsheet"/* "$DOCSET_HTTP/"
+
+  print -- "finished"
+
+# $ sqlite3 mydata.db
+#        SQLite version 3.16.0 2016-12-16 21:29:42
+#        Enter ".help" for usage hints.
+#        sqlite> create table memos(text, priority INTEGER);
+#        sqlite> insert into memos values('deliver project description', 10);
+#        sqlite> insert into memos values('lunch with Christine', 100);
+#        sqlite> select * from memos;
+
+#  <docset name>.docset/Contents/Resources/docSet.dsidx
+
+#  CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);
+
+#  CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);
+
+#  INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('name', 'type', 'path');
+
+
+
+}

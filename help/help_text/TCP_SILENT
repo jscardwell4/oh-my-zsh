@@ -1,0 +1,6 @@
+
+TCP_SILENT
+       May be set directly, although it is also controlled by  tcp_log.
+       If of non-zero length, data read by tcp_read will not be written
+       to standard output, though may still be written to a log file.
+

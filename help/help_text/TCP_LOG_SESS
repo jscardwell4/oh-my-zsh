@@ -1,0 +1,9 @@
+
+TCP_LOG_SESS
+       May be set directly, although it is also controlled by  tcp_log.
+       The  prefix for a set of files to which output from each session
+       separately   will   be    sent;    the    full    filename    is
+       ${TCP_LOG_SESS}.sess.   Output to each file is raw; no prompt is
+       added.  If it is not an absolute path name, it will  follow  the
+       user's current directory.
+

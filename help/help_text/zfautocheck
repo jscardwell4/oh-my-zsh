@@ -1,0 +1,12 @@
+
+zfautocheck [ -dn ]
+       This function is called to implement automatic reopening  behav-
+       iour,  as  described  in  more  detail  below.  The options must
+       appear in the first  argument;  -n  prevents  the  command  from
+       changing to the old directory, while -d prevents it from setting
+       the variable do close, which it otherwise does  as  a  flag  for
+       automatically closing the connection after a transfer.  The host
+       and directory for the last session are stored  in  the  variable
+       $zflastsession,  but  the internal host/user/password parameters
+       must also be correctly set.
+

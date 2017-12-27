@@ -1,0 +1,9 @@
+
+zfget match prefix suffix
+       This performs matching for completion of remote  filenames.   It
+       caches  files  for  the  current  directory  (only) in the shell
+       parameter $zftp fcache.  It is in the form to be called  by  the
+       -K  option  of  compctl,  but also works when called from a wid-
+       get-style completion function with prefix and suffix set  appro-
+       priately.
+

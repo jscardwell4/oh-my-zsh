@@ -1,0 +1,29 @@
+
+tcp_spam [-ertv] [ -a | -s  sess | -l sess,... ] cmd ...
+       Execute `cmd ...' for each session in turn.  Note this  executes
+       the  command and arguments; it does not send the command line as
+       data unless the -t (transmit) option is given.
+
+       The sessions may be selected explicitly with the standard -a, -s
+       or  -l  options,  or  may  be chosen implicitly.  If none of the
+       three options is given  the  rules  are:  first,  if  the  array
+       $tcp_spam_list  is  set,  this is taken as the list of sessions,
+       otherwise all sessions are taken.  Second, any sessions given in
+       the  array  $tcp_no_spam_list  are removed from the list of ses-
+       sions.
+
+       Normally, any sessions added by the `-a' flag or when  all  ses-
+       sions  are  chosen  implicitly  are spammed in alphabetic order;
+       sessions given by the $tcp_spam_list array  or  on  the  command
+       line  are  spammed in the order given.  The -r flag reverses the
+       order however it was arrived it.
+
+       The -v flag specifies that a $TCP_PROMPT will be  output  before
+       each session.  This is output after any modification to TCP_SESS
+       by  the  user-defined  tcp_on_spam  function  described   below.
+       (Obviously that function is able to generate its own output.)
+
+       If  the  option -e is present, the line given as cmd ... is exe-
+       cuted using eval, otherwise it is executed without  any  further
+       processing.
+

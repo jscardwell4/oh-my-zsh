@@ -1,0 +1,7 @@
+
+zfrglob varname
+       Perform  remote  globbing,  as  describes  in more detail below.
+       varname is the name of a variable containing the pattern  to  be
+       expanded;  if  there were any matches, the same variable will be
+       set to the expanded set of filenames on return.
+

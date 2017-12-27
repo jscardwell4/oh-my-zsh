@@ -1,0 +1,3 @@
+pushln [ arg ... ]
+         ---
+       Equivalent to print -nz.

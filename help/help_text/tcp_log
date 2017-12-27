@@ -1,0 +1,8 @@
+
+TCP_LOG
+       May be set directly, although it is also controlled by  tcp_log.
+       The  name  of  a  file to which output from all sessions will be
+       sent.  The output is proceeded by the usual $TCP_PROMPT.  If  it
+       is  not an absolute path name, it will follow the user's current
+       directory.
+

@@ -1,0 +1,12 @@
+
+zfuget [ -Gvst ] file1 ...
+       As zfget, but only retrieve  files  where  the  version  on  the
+       remote server is newer (has a later modification time), or where
+       the local file does not exist.  If the remote file is older  but
+       the files have different sizes, or if the sizes are the same but
+       the remote file is newer, the  user  will  usually  be  queried.
+       With  the  option  -s, the command runs silently and will always
+       retrieve the file in either of those two cases.  With the option
+       -v, the command prints more information about the files while it
+       is working out whether or not to transfer them.
+

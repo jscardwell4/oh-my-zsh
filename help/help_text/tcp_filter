@@ -1,0 +1,8 @@
+
+tcp_filter
+       Array. May be set directly.  A set of extended globbing patterns
+       which, if matched in tcp_output, will cause the line not  to  be
+       printed  to  standard output.  The patterns should be defined as
+       described for the arguments to tcp_expect.  Output  of  line  to
+       log files is not affected.
+

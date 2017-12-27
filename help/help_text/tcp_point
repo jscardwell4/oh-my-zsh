@@ -1,0 +1,24 @@
+
+tcp_point port
+tcp_shoot host port
+       This pair of functions provide a simple way to transfer  a  file
+       between  two  hosts  within the shell.  Note, however, that bulk
+       data transfer is currently done using cat.  tcp_point reads  any
+       data arriving at port and sends it to standard output; tcp_shoot
+       connects to port on host and  sends  its  standard  input.   Any
+       unused  port  may  be used; the standard mechanism for picking a
+       port is to think of a random four-digit number above 1024  until
+       one works.
+
+       To  transfer  a  file  from  host  woodcock to host springes, on
+       springes:
+
+              tcp_point 8091 >output_file
+
+       and on woodcock:
+
+              tcp_shoot springes 8091 <input_file
+
+       As these two functions do not require tcp_open to set up  a  TCP
+       connection first, they may need to be autoloaded separately.
+

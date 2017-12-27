@@ -1,0 +1,6 @@
+
+zfinit [ -n ]
+       As described above, this is used to initialize the zftp function
+       system.   The  -n  option  should be used if the zftp command is
+       already built into the shell.
+

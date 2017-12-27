@@ -1,0 +1,27 @@
+
+tcp_send [-cnq] [ -s sess | -l sess,... ] data ...
+tcp_send [-cnq] -a data ...
+       Send the supplied data strings to all the specified sessions  in
+       turn.  The underlying operation differs little from a `print -r'
+       to the session's file descriptor, although it attempts  to  pre-
+       vent  the  shell  from  dying  owing  to  a SIGPIPE caused by an
+       attempt to write to a defunct session.
+
+       The option -c causes tcp_send to  behave  like  cat.   It  reads
+       lines  from  standard input until end of input and sends them in
+       turn to the specified session(s) exactly as if they  were  given
+       as data arguments to individual tcp_send commands.
+
+       The  option  -n  prevents tcp_send from putting a newline at the
+       end of the data strings.
+
+       The remaining options all behave as for tcp_read.
+
+       The data arguments are not further processed once they have been
+       passed to tcp_send; they are simply passed down to print -r.
+
+       If  the  parameter $TCP_OUTPUT is a non-empty string and logging
+       is enabled then the data sent to each session will be echoed  to
+       the  log  file(s)  with  $TCP_OUTPUT in front where appropriate,
+       much in the manner of $TCP_PROMPT.
+

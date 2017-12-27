@@ -1,0 +1,22 @@
+
+tcp_proxy
+       This is a simple-minded function to accept a TCP connection  and
+       execute  a  command  with  I/O  redirected  to  the  connection.
+       Extreme caution should be taken as there is no security  whatso-
+       ever  and  this can leave your computer open to the world.  Ide-
+       ally, it should only be used behind a firewall.
+
+       The first argument is a TCP port on which the function will lis-
+       ten.
+
+       The remaining arguments give a command and its arguments to exe-
+       cute with standard input, standard  output  and  standard  error
+       redirected  to  the file descriptor on which the TCP session has
+       been accepted.  If no command is given, a new  zsh  is  started.
+       This  gives  everyone  on  your  network  direct  access to your
+       account, which in many cases will be a bad thing.
+
+       The command is run in the  background,  so  tcp_proxy  can  then
+       accept  new connections.  It continues to accept new connections
+       until interrupted.
+

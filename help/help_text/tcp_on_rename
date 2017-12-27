@@ -1,0 +1,5 @@
+
+tcp_on_rename oldsess fd newsess
+       This  is  called after a session has been renamed with the three
+       arguments old session name, file descriptor, new session name.
+

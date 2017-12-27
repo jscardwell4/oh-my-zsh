@@ -1,0 +1,5 @@
+
+tcp_lines
+       Array.  The  set of lines read during the last call to tcp_read,
+       including the last ($TCP_LINE).
+

@@ -1,0 +1,14 @@
+
+zfmark [ bookmark ]
+       If  given an argument, mark the current host, user and directory
+       under the name bookmark for later use by zfgoto.  If there is no
+       connection  open, use the values for the last connection immedi-
+       ately before it was closed; it is an error if  there  was  none.
+       Any  existing  bookmark  under  the  same  name will be silently
+       replaced.
+
+       If not given an argument, list the existing  bookmarks  and  the
+       points to which they refer in the form user@host:directory; this
+       is the format in which they are stored,  and  the  file  may  be
+       edited directly.
+

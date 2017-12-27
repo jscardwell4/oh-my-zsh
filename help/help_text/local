@@ -1,0 +1,5 @@
+local [ {+|-}AEFHUahlprtux ] [ -LRZi [ n ]] [ name[=value] ] ...
+                                       -      ----  -----
+       Same as typeset, except that the options -g, and -f are not per-
+       mitted.   In  this  case the -x option does not force the use of
+       -g, i.e. exported variables will be local to functions.

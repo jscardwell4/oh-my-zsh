@@ -1,0 +1,24 @@
+
+zfpcp local-file remote-file
+zfpcp lfile1 ... rdir
+       This  sends  files  to the remote server with arguments behaving
+       similarly to the cp command.
+
+       With  two  arguments,  copy  local-file   to   the   server   as
+       remote-file.
+
+       With  more  than  two arguments, copy all the local files lfile1
+       ... into the existing remote directory rdir retaining  the  same
+       basenames.  This assumes UNIX directory semantics.
+
+       A  problem  arises if you attempt to use zfpcp lfile1 rdir, i.e.
+       the second form of copying but with two arguments, as  the  com-
+       mand  has  no  simple  way  of  knowing if rdir corresponds to a
+       directory or a filename.  It attempts to resolve this in various
+       ways.   First,  if the rdir argument is `.' or `..' or ends in a
+       slash, it is assumed to be a directory.  Secondly, if the opera-
+       tion  of  copying to a remote file in the first form failed, and
+       the remote server sends back the expected failure code 553 and a
+       reply  including  the  string  `Is a directory', then zfpcp will
+       retry using the second form.
+

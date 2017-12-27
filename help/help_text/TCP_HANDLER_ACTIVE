@@ -1,0 +1,6 @@
+
+TCP_HANDLER_ACTIVE
+       Scalar.  Set to 1 within tcp_fd_handler to indicate to functions
+       called recursively that they have been called during  an  editor
+       session.  Otherwise unset.
+

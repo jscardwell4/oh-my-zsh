@@ -1,0 +1,19 @@
+
+tcp_on_spam sess command ...
+       This is called once for each session spammed, just before a com-
+       mand  is  executed for a session by tcp_spam.  The arguments are
+       the session name followed by the command list  to  be  executed.
+       If  tcp_spam  was  called  with the option -t, the first command
+       will be tcp_send.
+
+       This function is called after $TCP_SESS is set  to  reflect  the
+       session  to be spammed, but before any use of it is made.  Hence
+       it is possible to alter the value of $TCP_SESS within this func-
+       tion.   For  example,  the  session  arguments to tcp_spam could
+       include extra information to be stripped off  and  processed  in
+       tcp_on_spam.
+
+       If the function sets the parameter $REPLY to `done', the command
+       line is not executed; in addition, no prompt is printed for  the
+       -v option to tcp_spam.
+

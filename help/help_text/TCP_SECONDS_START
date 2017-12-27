@@ -1,0 +1,19 @@
+
+TCP_SECONDS_START
+       This value is created and initialised to zero by tcp_open.
+
+       The functions tcp_read and tcp_expect use  the  shell's  SECONDS
+       parameter  for  their own timing purposes.  If that parameter is
+       not of floating point type on entry to one of the functions,  it
+       will  create  a  local parameter SECONDS which is floating point
+       and set the parameter TCP_SECONDS_START to the previous value of
+       $SECONDS.   If  the  parameter  is already floating point, it is
+       used without a local copy being created and TCP_SECONDS_START is
+       not set.  As the global value is zero, the shell elapsed time is
+       guaranteed to be the sum of $SECONDS and $TCP_SECONDS_START.
+
+       This can be avoided by setting SECONDS globally  to  a  floating
+       point  value  using `typeset -F SECONDS'; then the TCP functions
+       will never make a local copy and never set TCP_SECONDS_START  to
+       a non-zero value.
+

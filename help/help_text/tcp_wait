@@ -1,0 +1,8 @@
+
+tcp_wait
+       The sole argument is an integer or floating point  number  which
+       gives  the seconds to delay.  The shell will do nothing for that
+       period except wait for input on  all  TCP  sessions  by  calling
+       tcp_read  -a.   This  is similar to the interactive behaviour at
+       the command prompt when zle handlers are installed.
+

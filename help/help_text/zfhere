@@ -1,0 +1,6 @@
+
+zfhere Change directory on the remote server to the  one  corresponding
+       to  the current local directory, with special handling of `~' as
+       in zfcd.   For  example,  if  the  current  local  directory  is
+       ~/foo/bar,  then zfhere performs the effect of `zfcd ~/foo/bar'.
+

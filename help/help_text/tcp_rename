@@ -1,0 +1,5 @@
+
+tcp_rename old new
+       Rename session  old  to  session  new.   The  old  name  becomes
+       invalid.
+

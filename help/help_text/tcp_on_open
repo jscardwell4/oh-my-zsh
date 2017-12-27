@@ -1,0 +1,9 @@
+
+tcp_on_open sess fd
+       This is called after a new session has  been  defined  with  the
+       session  name and file descriptor as arguments.  If it returns a
+       non-zero status, opening the session is assumed to fail and  the
+       session  is  closed  again;  however,  tcp_open will continue to
+       attempt to open any remaining  sessions  given  on  the  command
+       line.
+

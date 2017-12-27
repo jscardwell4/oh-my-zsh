@@ -1,0 +1,7 @@
+
+zfls [ ls-options ] [ dir ]
+       List  files  on the remote server.  With no arguments, this will
+       produce a simple list of  file  names  for  the  current  remote
+       directory.  Any arguments are passed directly to the server.  No
+       pager and no caching is used.
+

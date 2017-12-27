@@ -1,0 +1,6 @@
+
+tcp_on_alias alias fd
+       When an alias is defined, this function will be called with  two
+       arguments: the name of the alias, and the file descriptor of the
+       corresponding session.
+

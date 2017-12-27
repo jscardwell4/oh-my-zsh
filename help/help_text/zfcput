@@ -1,0 +1,8 @@
+
+zfcput file1 ...
+       As zfput, but if any remote file already exists and  is  shorter
+       than  the local equivalent, assume it is the result of an incom-
+       plete transfer and send the rest of the file to  append  to  the
+       existing  part.   As the FTP append command is part of the stan-
+       dard set, this is in principle more likely to work than  zfcget.
+

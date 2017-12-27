@@ -1,0 +1,5 @@
+
+TCP_READ_DEBUG
+       May be set directly.  If this has non-zero length, tcp_read will
+       give some limited diagnostics about data being read.
+

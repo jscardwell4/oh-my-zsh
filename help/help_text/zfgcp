@@ -1,0 +1,13 @@
+
+zfgcp [ -Gt ] remote-file local-file
+zfgcp [ -Gt ] rfile1 ... ldir
+       This retrieves files  from  the  remote  server  with  arguments
+       behaving similarly to the cp command.
+
+       In the first form, copy remote-file from the server to the local
+       file local-file.
+
+       In the second form, copy all the remote files  rfile1  ...  into
+       the  local  directory  ldir  retaining the same basenames.  This
+       assumes UNIX directory semantics.
+

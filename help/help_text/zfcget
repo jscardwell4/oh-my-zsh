@@ -1,0 +1,12 @@
+
+zfcget [ -Gt ] file1 ...
+       As zfget, but if any of the local files exists, and  is  shorter
+       than  the corresponding remote file, the command assumes that it
+       is the result of a partially completed transfer and attempts  to
+       transfer the rest of the file.  This is useful on a poor connec-
+       tion which keeps failing.
+
+       Note that this requires a commonly  implemented,  but  non-stan-
+       dard,  version of the FTP protocol, so is not guaranteed to work
+       on all servers.
+

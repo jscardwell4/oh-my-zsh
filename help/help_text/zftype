@@ -1,0 +1,7 @@
+
+zftype [ type ]
+       With no arguments, show the type of data to be transferred, usu-
+       ally  ASCII  or  binary.  With an argument, change the type: the
+       types `A' or `ASCII' for ASCII data and `B' or `BINARY', `I'  or
+       `IMAGE' for binary data are understood case-insensitively.
+

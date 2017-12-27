@@ -1,0 +1,7 @@
+
+zfuput [ -vs ] file1 ...
+       As  zfput,  but only send files which are newer than their local
+       equivalents, or if the remote file does not exist.  The logic is
+       the  same  as  for zfuget, but reversed between local and remote
+       files.
+

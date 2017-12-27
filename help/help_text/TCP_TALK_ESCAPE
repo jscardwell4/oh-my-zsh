@@ -1,0 +1,5 @@
+
+TCP_TALK_ESCAPE
+       May  be  set  directly.   See  the  description  of the function
+       tcp_talk for how this is used.
+

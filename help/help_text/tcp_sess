@@ -1,0 +1,5 @@
+
+TCP_SESS
+       May  be set directly.  The current session; must refer to one of
+       the sessions established by tcp_open.
+

@@ -1,0 +1,30 @@
+
+zfopen [ -1 ] [ host [ user [ password [ account ] ] ] ]
+       If  host  is present, open a connection to that host under user-
+       name user with password password (and,  on  the  rare  occasions
+       when  it is necessary, account account).  If a necessary parame-
+       ter is missing or given as `?' it will be prompted for.  If host
+       is not present, use a previously stored set of parameters.
+
+       If  the  command  was successful, and the terminal is compatible
+       with xterm or is sun-cmd, a summary will  appear  in  the  title
+       bar,  giving the local host:directory and the remote host:direc-
+       tory; this is handled  by  the  function  zftp chpwd,  described
+       below.
+
+       Normally,  the  host,  user and password are internally recorded
+       for later re-opening, either by a zfopen with no  arguments,  or
+       automatically (see below).  With the option `-1', no information
+       is stored.  Also, if an open command with arguments failed,  the
+       parameters  will  not  be  retained (and any previous parameters
+       will also be deleted).  A zfopen on its own,  or  a  zfopen  -1,
+       never alters the stored parameters.
+
+       Both zfopen and zfanon (but not zfparams) understand URLs of the
+       form ftp://host/path... as meaning to connect to the host,  then
+       change  directory  to  path  (which  must  be a directory, not a
+       file).  The `ftp://' can be omitted; the trailing `/' is  enough
+       to  trigger  recognition  of the path.  Note prefixes other than
+       `ftp:' are not recognized, and that  all  characters  after  the
+       first slash beyond host are significant in path.
+

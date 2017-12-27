@@ -1,0 +1,3 @@
+which [ -wpams ] name ...
+                 ----
+       Equivalent to whence -c.

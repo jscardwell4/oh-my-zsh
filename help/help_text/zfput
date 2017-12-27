@@ -1,0 +1,13 @@
+
+zfput [ -r ] file1 ...
+       Send all the file1 ... given separately to  the  remote  server.
+       If  a filename contains a `/', the full filename is used locally
+       to find the file, but only the basename is used for  the  remote
+       file name.
+
+       With the option -r, if any of the files are directories they are
+       sent recursively with all their subdirectories, including  files
+       beginning  with  `.'.   This  requires  that  the remote machine
+       understand UNIX file semantics, since `/' is used as a directory
+       separator.
+

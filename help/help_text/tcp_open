@@ -1,0 +1,74 @@
+tcp_open [-qz] host port [ sess ]
+tcp_open [-qz] [ -s sess | -l sess,... ] ...
+tcp_open [-qz] [-a fd | -f fd ] [ sess ]
+       Open  a new session.  In the first and simplest form, open a TCP
+       connection to host host at port port; numeric and symbolic forms
+       are understood for both.
+
+       If sess is given, this becomes the name of the session which can
+       be used to refer to multiple different TCP connections.  If sess
+       is  not  given,  the  function  will invent a numeric name value
+       (note this is not the same as the file descriptor to  which  the
+       session  is attached).  It is recommended that session names not
+       include `funny'  characters,  where  funny  characters  are  not
+       well-defined  but  certainly  do  not  include  alphanumerics or
+       underscores, and certainly do include whitespace.
+
+       In the second case, one or more sessions to be opened are  given
+       by  name.   A  single  session  name  is  given  after  -s and a
+       comma-separated list after -l; both options may be  repeated  as
+       many  times  as necessary.  A failure to open any session causes
+       tcp_open to abort.  The host and port are  read  from  the  file
+       .ztcp_sessions in the same directory as the user's zsh initiali-
+       sation files, i.e. usually the home directory, but  $ZDOTDIR  if
+       that  is  set.  The file consists of lines each giving a session
+       name and the corresponding host and port, in  that  order  (note
+       the  session  name  comes  first, not last), separated by white-
+       space.
+
+       The third form allows passive and fake TCP connections.  If  the
+       option  -a  is  used, its argument is a file descriptor open for
+       listening for connections.  No function front-end is provided to
+       open  such  a file descriptor, but a call to `ztcp -l port' will
+       create one with the file  descriptor  stored  in  the  parameter
+       $REPLY.   The listening port can be closed with `ztcp -c fd'.  A
+       call to `tcp_open -a fd' will block until a remote  TCP  connec-
+       tion  is  made  to  port on the local machine.  At this point, a
+       session is created in the usual way  and  is  largely  indistin-
+       guishable  from  an  active  connection  created with one of the
+       first two forms.
+
+       If the option -f is used, its  argument  is  a  file  descriptor
+       which  is  used  directly as if it were a TCP session.  How well
+       the remainder of the TCP function system copes with this depends
+       on what actually underlies this file descriptor.  A regular file
+       is likely to be unusable; a FIFO (pipe) of some sort  will  work
+       better,  but  note  that it is not a good idea for two different
+       sessions to attempt to read from the same FIFO at once.
+
+       If the option -q is given with any of the three forms,  tcp_open
+       will  not  print informational messages, although it will in any
+       case exit with an appropriate status.
+
+       If the line editor (zle) is in use, which is typically the  case
+       if  the shell is interactive, tcp_open installs a handler inside
+       zle which will check for new data at the same time as it  checks
+       for keyboard input.  This is convenient as the shell consumes no
+       CPU time while waiting; the test is performed by  the  operating
+       system.   Giving  the  option -z to any of the forms of tcp_open
+       prevents the handler from being installed, so data must be  read
+       explicitly.   Note, however, this is not necessary for executing
+       complete sets of send and read commands from a function, as  zle
+       is not active at this point.  Generally speaking, the handler is
+       only active when the shell is waiting for  input  at  a  command
+       prompt or in the vared builtin.  The option has no effect if zle
+       is not active; `[[ -o zle]]' will test for this.
+
+       The first session to be opened becomes the current  session  and
+       subsequent calls to tcp_open do not change it.  The current ses-
+       sion is stored in the parameter $TCP_SESS; see  below  for  more
+       detail about the parameters used by the system.
+
+       The  function  tcp_on_open, if defined, is called when a session
+       is opened.  See the description below.
+

@@ -1,0 +1,21 @@
+
+tcp_close [-qn] [ -a | -l sess,... | sess ... ]
+       Close the named sessions, or the  current  session  if  none  is
+       given,  or all open sessions if -a is given.  The options -l and
+       -s are both handled for consistency with tcp_open, although  the
+       latter is redundant.
+
+       If  the  session  being  closed is the current one, $TCP_SESS is
+       unset, leaving no current session, even if there are other  ses-
+       sions still open.
+
+       If  the session was opened with tcp_open -f, the file descriptor
+       is closed so long as it is  in  the  range  0  to  9  accessible
+       directly  from  the command line.  If the option -n is given, no
+       attempt will be made to close file  descriptors  in  this  case.
+       The  -n  option  is  not used for genuine ztcp session; the file
+       descriptors are always closed with the session.
+
+       If the option -q is given, no  informational  messages  will  be
+       printed.
+

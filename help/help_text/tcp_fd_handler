@@ -1,0 +1,11 @@
+
+tcp_fd_handler
+       This  is  the  function installed by tcp_open for handling input
+       from within the line editor, if that is required.  It is in  the
+       format documented for the builtin `zle -F' in zshzle(1) .
+
+       While active, the function sets the parameter TCP_HANDLER_ACTIVE
+       to 1.  This allows shell code called internally (for example, by
+       setting  tcp_on_read)  to tell if is being called when the shell
+       is otherwise idle at the editor prompt.
+

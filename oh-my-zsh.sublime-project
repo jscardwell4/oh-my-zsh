@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/Moondeer",
+			"folder_include_patterns": [".oh-my-zsh", ".oh-my-zsh/*"],
+			"file_include_patterns": ["/Users/Moondeer/.oh-my-zsh/*", ".zsh*"]
+		}
+	]
+}

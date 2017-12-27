@@ -1,0 +1,12 @@
+
+TCP_PROMPT
+       May  be  set  directly.   Used  as  the  prefix for data read by
+       tcp_read which is printed to standard output or to the log  file
+       given  by $TCP_LOG, if any.  Any `%s', `%f' or `%%' occurring in
+       the string will be replaced by the name of the session, the ses-
+       sion's  underlying  file  descriptor,  or  a single `%', respec-
+       tively.  The expression `%c' expands to 1 if the  session  being
+       read  is  the  current  session,  else 0; this is most useful in
+       ternary expressions such as `%(c.-.+)' which outputs `+' if  the
+       session is the current one, else `-'.
+

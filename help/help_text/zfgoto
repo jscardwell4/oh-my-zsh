@@ -1,0 +1,15 @@
+
+zfgoto [ -n ] bookmark
+       Return  to  the location given by bookmark, as previously set by
+       zfmark.  If the location has user `ftp' or `anonymous', open the
+       connection with zfanon, so that no password is required.  If the
+       user and host parameters match those stored for the current ses-
+       sion,  if  any,  those  will  be  used, and again no password is
+       required.  Otherwise a password will be prompted for.
+
+       With the option -n, the bookmark  is  taken  to  be  a  nickname
+       stored  by  the  ncftp  program  in  its bookmark file, which is
+       assumed to be ~/.ncftp/bookmarks.  The  function  works  identi-
+       cally in other ways.  Note that there is no mechanism for adding
+       or modifying ncftp bookmarks from the zftp functions.
+

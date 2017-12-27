@@ -1,0 +1,48 @@
+
+tcp_expect [ -q ] [ -p var ] [ -t  to | -T TO]
+    [ -a | -s sess ... | -l sess,... ] pattern ...
+       Wait  for  input  matching any of the given patterns from any of
+       the specified sessions.  Input is ignored until  an  input  line
+       matches  one of the given patterns; at this point status zero is
+       returned, the matching line is stored in $TCP_LINE, and the full
+       set of lines read during the call to tcp_expect is stored in the
+       array $tcp_expect_lines.
+
+       Sessions are specified in the same way as tcp_read: the  default
+       is  to use the current session, otherwise the sessions specified
+       by -a, -s, or -l are used.
+
+       Each pattern is a standard zsh extended-globbing  pattern;  note
+       that  it  needs  to be quoted to avoid it being expanded immedi-
+       ately by filename generation.  It must match the full  line,  so
+       to  match  a substring there must be a `*' at the start and end.
+       The line matched  against  includes  the  $TCP_PROMPT  added  by
+       tcp_read.   It is possible to include the globbing flags `#b' or
+       `#m' in the patterns to make  backreferences  available  in  the
+       parameters  $MATCH,  $match,  etc., as described in the base zsh
+       documentation on pattern matching.
+
+       Unlike tcp_read, the default behaviour of tcp_expect is to block
+       indefinitely  until  the  required  input is found.  This can be
+       modified by specifying a timeout with -t or -T;  these  function
+       as  in  tcp_read,  specifying  a  per-read  or  overall timeout,
+       respectively, in seconds, as an integer or  floating-point  num-
+       ber.   As  tcp_read,  the function returns status 2 if a timeout
+       occurs.
+
+       The function returns as soon as any one of  the  patterns  given
+       match.   If  the  caller  needs  to  know  which of the patterns
+       matched, the option -p var can be used; on return, $var  is  set
+       to  the  number of the pattern using ordinary zsh indexing, i.e.
+       the first is 1, and so on.  Note the absence of a `$'  in  front
+       of  var.   To  avoid  clashes,  the  parameter cannot begin with
+       `_expect'.
+
+       The option -q is passed directly down to tcp_read.
+
+       As all input is done via tcp_read, all  the  usual  rules  about
+       output of lines read apply.  One exception is that the parameter
+       $tcp_lines will  only  reflect  the  line  actually  matched  by
+       tcp_expect; use $tcp_expect_lines for the full set of lines read
+       during the function call.
+
