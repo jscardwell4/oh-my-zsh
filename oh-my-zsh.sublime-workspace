@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"item",
+				"item_list"
+			],
+			[
+				"rand",
+				"randint"
+			],
+			[
+				"E",
+				"EXPRESSION"
+			],
+			[
 				"fol",
 				"folder_exclude_patterns\tfolder key"
 			],
@@ -502,46 +514,44 @@
 			[
 				"config",
 				"config_file"
-			],
-			[
-				"o",
-				"outfile"
-			],
-			[
-				"no",
-				"no_common"
-			],
-			[
-				"other",
-				"other_keys"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "oh-my-zsh.sublime-project",
-			"settings":
-			{
-				"buffer_size": 192,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "/Users/Moondeer/.zshrc",
 			"settings":
 			{
-				"buffer_size": 259,
+				"buffer_size": 289,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/Moondeer/.zshenv",
+			"file": "custom/plugins/psearch/psearch.plugin.zsh",
 			"settings":
 			{
-				"buffer_size": 717,
+				"buffer_size": 112,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "custom/plugins/random_sample/random_sample.plugin.zsh",
+			"settings":
+			{
+				"buffer_size": 66,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "custom/plugins/random_sample/random_sample.py",
+			"settings":
+			{
+				"buffer_size": 604,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -557,6 +567,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"pyf",
+				"PyYapf: Format Document"
+			],
+			[
+				"sspy",
+				"Set Syntax: Python"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -612,10 +630,6 @@
 			[
 				"sstex",
 				"Set Syntax: TeX"
-			],
-			[
-				"sspy",
-				"Set Syntax: Python"
 			],
 			[
 				"sstext",
@@ -997,10 +1011,19 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/Moondeer"
+		"/Users/Moondeer",
+		"/Users/Moondeer/.oh-my-zsh",
+		"/Users/Moondeer/.oh-my-zsh/custom",
+		"/Users/Moondeer/.oh-my-zsh/custom/plugins",
+		"/Users/Moondeer/.oh-my-zsh/custom/plugins/capture",
+		"/Users/Moondeer/.oh-my-zsh/custom/plugins/psearch",
+		"/Users/Moondeer/.oh-my-zsh/custom/plugins/random_sample"
 	],
 	"file_history":
 	[
+		"/Users/Moondeer/Projects/ChordFinder/Data/audio/chords/Features/random_sample",
+		"/Users/Moondeer/.oh-my-zsh/oh-my-zsh.sublime-project",
+		"/Users/Moondeer/.zshrc",
 		"/Users/Moondeer/.oh-my-zsh/custom/plugins/finder/finder.plugin.zsh",
 		"/Users/Moondeer/disabled.profile",
 		"/Users/Moondeer/.oh-my-zsh/custom/plugins/image/image.plugin.zsh",
@@ -1022,7 +1045,6 @@
 		"/Users/Moondeer/.oh-my-zsh/custom/plugins/cheatsheet/cheatsheet_zsh",
 		"/Users/Moondeer/.oh-my-zsh/custom/plugins/image/invert",
 		"/Users/Moondeer/.oh-my-zsh/custom/plugins/image/exr_to_png",
-		"/Users/Moondeer/.oh-my-zsh/oh-my-zsh.sublime-project",
 		"/Users/Moondeer/Projects/Cheatsheets/zsh_notes.pug",
 		"/Users/Moondeer/.oh-my-zsh/custom/functions.zsh",
 		"/Users/Moondeer/.oh-my-zsh/functions/cheatsheet_zsh",
@@ -1030,7 +1052,6 @@
 		"/Users/Moondeer/bin/cheatsheet",
 		"/Users/Moondeer/.oh-my-zsh/functions/cheatsheet_swift",
 		"/Users/Moondeer/Projects/Cheatsheets/zsh_notes.md",
-		"/Users/Moondeer/.zshrc",
 		"/Users/Moondeer/.oh-my-zsh/custom/paths.zsh",
 		"/Users/Moondeer/.oh-my-zsh/functions/resources/cheatsheet/index.html",
 		"/Users/Moondeer/.oh-my-zsh/functions/resources/cheatsheet/style.css",
@@ -1127,8 +1148,7 @@
 		"/Users/Moondeer/Projects/Gyre/Gyre/GyreMenuScene.m",
 		"/Users/Moondeer/Projects/Gyre/Gyre/GyreSettingsScene.m",
 		"/Users/Moondeer/Projects/Gyre/Gyre/GyreGameplayScene.m",
-		"/Users/Moondeer/Projects/Gyre/Gyre/GyreGameplayLights.m",
-		"/Users/Moondeer/Projects/Gyre/Gyre/GyreSettingsManager.m"
+		"/Users/Moondeer/Projects/Gyre/Gyre/GyreGameplayLights.m"
 	],
 	"find":
 	{
@@ -1442,81 +1462,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "oh-my-zsh.sublime-project",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 192,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								180,
-								180
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PackageDev/Package/Sublime Text Project/Sublime Text Project.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "/Users/Moondeer/.zshrc",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 259,
+						"buffer_size": 289,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								168,
-								168
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/Moondeer/.zshenv",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 717,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								231,
+								231
 							]
 						],
 						"settings":
@@ -1528,6 +1491,90 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "custom/plugins/psearch/psearch.plugin.zsh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 112,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								112,
+								112
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "custom/plugins/random_sample/random_sample.plugin.zsh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 66,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								61,
+								63
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "custom/plugins/random_sample/random_sample.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 604,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								602,
+								602
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
