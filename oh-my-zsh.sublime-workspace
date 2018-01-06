@@ -538,10 +538,10 @@
 			}
 		},
 		{
-			"file": "custom/plugins/subl/subl.plugin.zsh",
+			"file": "/Users/Moondeer/.zshenv",
 			"settings":
 			{
-				"buffer_size": 1954,
+				"buffer_size": 717,
 				"line_ending": "Unix"
 			}
 		}
@@ -997,28 +997,7 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/Moondeer",
-		"/Users/Moondeer/.oh-my-zsh",
-		"/Users/Moondeer/.oh-my-zsh/custom",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/cheatsheet",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/color_index",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/dash",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/dirsync",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/finder",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/gyb",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/image",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/markdown",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/med",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/notes",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/prompt_moondeer_setup",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/replacetext",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/subl",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/swift_operator_chars",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/xcnuke",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/zipcat",
-		"/Users/Moondeer/.oh-my-zsh/plugins",
-		"/Users/Moondeer/.oh-my-zsh/plugins/sublime"
+		"/Users/Moondeer"
 	],
 	"file_history":
 	[
@@ -1463,7 +1442,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1520,37 +1499,35 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "custom/plugins/subl/subl.plugin.zsh",
+					"file": "/Users/Moondeer/.zshenv",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1954,
+						"buffer_size": 717,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1069,
-								1069
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

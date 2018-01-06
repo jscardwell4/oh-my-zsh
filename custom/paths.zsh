@@ -1,5 +1,5 @@
 # path
-path=(/usr/local/bin /usr/local/sbin $path $HOME/bin $HOME/Software/ruby/bin)
+path=(/usr/local/bin /usr/local/sbin $path $HOME/bin $HOME/Software/ruby/bin ./)
 
 # pythonpath
 export -TU PYTHONPATH pythonpath
