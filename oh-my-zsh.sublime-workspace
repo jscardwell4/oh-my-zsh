@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"CU",
+				"CUDA_HOME"
+			],
+			[
 				"item",
 				"item_list"
 			],
@@ -510,47 +514,35 @@
 			[
 				"name",
 				"namespace"
-			],
-			[
-				"config",
-				"config_file"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/Users/Moondeer/.zshrc",
+			"file": "/Users/Moondeer/.oh-my-zsh/custom/paths.zsh",
 			"settings":
 			{
-				"buffer_size": 289,
+				"buffer_size": 445,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "custom/plugins/psearch/psearch.plugin.zsh",
+			"contents": "Searching 826 files for \"DEVELOPER_DIR\" (regex, case sensitive)\n\n/Users/Moondeer/.zsh_history:\n  891  : 1515618550:0;xcode-select -p\n  892  : 1515618583:0;emacs $ZSH/custom/paths.zsh\n  893: : 1515618645:0;export DEVELOPER_DIR=/Applications/Xcode_8.3.3/Xcode.app/Contents/Developer\n  894  : 1515618656:0;make\n  895  : 1515619111:0;ls tensorflow\n\n/Users/Moondeer/.zshenv:\n   11  # environment\n   12  export JAVA_HOME=`/usr/libexec/java_home`\n   13: export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer\n   14  export EDITOR='subl -w'\n   15  export GIT_EDITOR=emacs\n\n/Users/Moondeer/.oh-my-zsh/plugins/xcode/README.md:\n   80  ## Caveats\n   81  \n   82: Using `xcsel` or `xcselv` to select an Xcode that is installed under your `$HOME` may break things for other users, depending on your system setup. We let you do this anyway because some people run OS X as effectively single-user, or have open permissions so this will work. You could also use `$DEVELOPER_DIR` as an alternative to `xcsel` that is scoped to the current user or session, instead of a global setting.\n   83  \n   84  This does not verify that the version name in the Xcode filename matches the actual version of that binary. It is the user's responsibility to get the names right.\n\n3 matches across 3 files\n",
 			"settings":
 			{
-				"buffer_size": 112,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"buffer_size": 1280,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
 			}
 		},
 		{
-			"file": "custom/plugins/random_sample/random_sample.plugin.zsh",
+			"file": "/Users/Moondeer/.zshenv",
 			"settings":
 			{
-				"buffer_size": 66,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "custom/plugins/random_sample/random_sample.py",
-			"settings":
-			{
-				"buffer_size": 604,
+				"buffer_size": 476,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -567,6 +559,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"sssh",
+				"Set Syntax: Bourne Again Shell (bash)"
+			],
 			[
 				"pyf",
 				"PyYapf: Format Document"
@@ -586,10 +582,6 @@
 			[
 				"resour",
 				"PackageResourceViewer: Open Resource"
-			],
-			[
-				"sssh",
-				"Set Syntax: Shell Script (Bash)"
 			],
 			[
 				"ssshe",
@@ -1014,16 +1006,22 @@
 		"/Users/Moondeer",
 		"/Users/Moondeer/.oh-my-zsh",
 		"/Users/Moondeer/.oh-my-zsh/custom",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/capture",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/psearch",
-		"/Users/Moondeer/.oh-my-zsh/custom/plugins/random_sample"
+		"/Users/Moondeer/.oh-my-zsh/custom/plugins"
 	],
 	"file_history":
 	[
+		"/Users/Moondeer/.oh-my-zsh/custom/aliases.zsh",
+		"/Users/Moondeer/.oh-my-zsh/custom/directories.zsh",
+		"/Users/Moondeer/.zshenv",
+		"/Users/moondeer/Library/Application Support/Sublime Text 3/Packages/BetterFindBuffer/Find Results.sublime-settings",
+		"/Users/moondeer/Library/Application Support/Sublime Text 3/Packages/User/Find Results.sublime-settings",
+		"/Users/moondeer/Library/Application Support/Sublime Text 3/Packages/BetterFindBuffer/BetterFindBuffer.sublime-settings",
+		"/Users/moondeer/.oh-my-zsh/custom/plugins/random_sample/random_sample.py",
+		"/Users/moondeer/.oh-my-zsh/custom/plugins/random_sample/random_sample.plugin.zsh",
+		"/Users/moondeer/.oh-my-zsh/custom/plugins/psearch/psearch.plugin.zsh",
+		"/Users/Moondeer/.zshrc",
 		"/Users/Moondeer/Projects/ChordFinder/Data/audio/chords/Features/random_sample",
 		"/Users/Moondeer/.oh-my-zsh/oh-my-zsh.sublime-project",
-		"/Users/Moondeer/.zshrc",
 		"/Users/Moondeer/.oh-my-zsh/custom/plugins/finder/finder.plugin.zsh",
 		"/Users/Moondeer/disabled.profile",
 		"/Users/Moondeer/.oh-my-zsh/custom/plugins/image/image.plugin.zsh",
@@ -1067,14 +1065,12 @@
 		"/Users/Moondeer/.oh-my-zsh/functions/med",
 		"/Users/Moondeer/.oh-my-zsh/functions/markdown.prompt",
 		"/Users/Moondeer/Documents/Shared Playground Data/SmoothedBinVectors.txt",
-		"/Users/Moondeer/.zshenv",
 		"/Users/Moondeer/.oh-my-zsh/functions/swift_operator_chars",
 		"/Users/Moondeer/.oh-my-zsh/functions/replacetext",
 		"/Users/Moondeer/.oh-my-zsh/tools/check_for_upgrade.sh",
 		"/Users/Moondeer/.oh-my-zsh/functions/exr_to_png",
 		"/Users/Moondeer/.oh-my-zsh/functions/gyb",
 		"/Users/Moondeer/GitHub/swift_source_root/swift/utils/gyb.py",
-		"/Users/Moondeer/.oh-my-zsh/custom/aliases.zsh",
 		"/Users/Moondeer/Library/Application Support/Sublime Text 3/Packages/DetectEmbeddedSyntax/detect_embedded_syntax.py",
 		"/Users/Moondeer/Projects/Chord Finder/Chord Finder/SpectralAnalysis.playground/Sources/Chords/ChordPattern.swift",
 		"/Users/Moondeer/Projects/Chord Finder/Chord Finder/SpectralAnalysis.playground/Sources/Pitches/PitchInterval.swift",
@@ -1141,22 +1137,15 @@
 		"/Users/Moondeer/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/Moondeer/.notes/gyre",
 		"/Users/Moondeer/.gitconfig",
-		"/Users/Moondeer/.oh-my-zsh/custom/directories.zsh",
-		"/Users/Moondeer/Projects/Gyre/Gyre/Nodes/GyreGameOverOverlayNode.m",
-		"/Users/Moondeer/Projects/Gyre/Gyre/Nodes/GyreTutorialOverlayNode.m",
-		"/Users/Moondeer/Projects/Gyre/.git/COMMIT_EDITMSG",
-		"/Users/Moondeer/Projects/Gyre/Gyre/GyreMenuScene.m",
-		"/Users/Moondeer/Projects/Gyre/Gyre/GyreSettingsScene.m",
-		"/Users/Moondeer/Projects/Gyre/Gyre/GyreGameplayScene.m",
-		"/Users/Moondeer/Projects/Gyre/Gyre/GyreGameplayLights.m"
+		"/Users/Moondeer/Projects/Gyre/Gyre/Nodes/GyreGameOverOverlayNode.m"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
-		"height": 102.0,
+		"height": 105.0,
 		"where_history":
 		[
 			"-*.dds,-*.eot,-*.gif,-*.ico,-*.jar,-*.jpeg,-*.jpg,-*.log,-*.pdf,-*.png,-*.swf,-*.tga,-*.ttf,-*.zip",
@@ -1189,6 +1178,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"DEVELOPER_DIR",
+			"ls=",
+			"ll=",
 			"\\",
 			"name",
 			"CONTENT",
@@ -1313,10 +1305,7 @@
 			"40–47",
 			"11–19",
 			"^((?:[0-9]+(?:–[0-9]+)?)\\t+.*)[ ]{2,}",
-			"^([0-9]+(?:–[0-9]+)?) +",
-			"^([0-9][^\\s]*)\\s*([^\\s]+|[^\\n][^\\s]+)+(?:\\n|(?:[ ]+([^\\n]+)\\n))",
-			"^([0-9][^\\s]*)\\s*([^\\s]+|[^\\n][^\\s]+)+(?:\\n|(?:[^w]+([^\\n]+)\\n))",
-			"^[0-9][^\\s]*\\s*([^\\s]+|\\s[^\\s]+)+"
+			"^([0-9]+(?:–[0-9]+)?) +"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1462,85 +1451,29 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/Moondeer/.zshrc",
+					"file": "/Users/Moondeer/.oh-my-zsh/custom/paths.zsh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 289,
+						"buffer_size": 445,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								231,
-								231
+								444,
+								444
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "custom/plugins/psearch/psearch.plugin.zsh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 112,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								112,
-								112
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "custom/plugins/random_sample/random_sample.plugin.zsh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 66,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								61,
-								63
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScript/Bash.sublime-syntax"
+							"syntax": "Packages/User/ZSH.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1550,25 +1483,52 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "custom/plugins/random_sample/random_sample.py",
+					"buffer": 1,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 604,
+						"buffer_size": 1280,
 						"regions":
 						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										212,
+										225
+									],
+									[
+										454,
+										467
+									],
+									[
+										955,
+										968
+									]
+								],
+								"scope": ""
+							}
 						},
 						"selection":
 						[
 							[
-								602,
-								602
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
+							"color_scheme": "Packages/User/MoonDarcula.tmTheme",
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1576,13 +1536,41 @@
 					},
 					"stack_index": 1,
 					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/Moondeer/.zshenv",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								266,
+								266
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/ZSH.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -1639,7 +1627,7 @@
 	"project": "oh-my-zsh.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
