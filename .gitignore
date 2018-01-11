@@ -6,3 +6,4 @@
 # temp files directories
 cache/
 log/
+/oh-my-zsh.sublime-workspace
