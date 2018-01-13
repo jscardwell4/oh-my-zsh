@@ -1,0 +1,74 @@
+usage() {
+  print "Usage: fcount [--expected <count>] [--ext <extension>] <directory>..."
+  print ""
+  print "Arguments:"
+  print "  <directory>  One or more directory paths for whose files will be counted"
+  print ""
+  print "Options:"
+  print "  --expected=<count>  The number of files expected to be found in each directory. Only"
+  print "                      directories with file counts not equal to <count> will be printed"
+  print "  --ext <extension>   The extension of the files to count. Only files with this extension"
+  print "                      will add to a directory's file count"
+}
+
+fcount() {
+  emulate -L zsh
+
+  setopt nullglob
+
+  local -A OPTIONS
+  zparseopts -AD -expected:=OPTIONS -ext:=OPTIONS
+
+  local DIRECTORIES=("$@")
+
+
+  local PATTERN=""
+
+  local FILE_COUNT_INFO="Counting all files in each specified directory"
+
+  if [[ -n "${OPTIONS[--ext]}" ]]; then
+    PATTERN="${OPTIONS[--ext]}"
+    FILE_COUNT_INFO="$FILE_COUNT_INFO with extension \'$PATTERN\'"
+  fi
+
+  local -i EXPECTED_COUNT=0
+  local SPECIFIED_COUNT="${OPTIONS[--expected]}"
+
+  if [[ -n "$SPECIFIED_COUNT" ]]; then
+    EXPECTED_COUNT="$SPECIFIED_COUNT"
+    FILE_COUNT_INFO="$FILE_COUNT_INFO, printing directories with a file"
+    FILE_COUNT_INFO="$FILE_COUNT_INFO count not equal to $EXPECTED_COUNT..."
+  else
+    FILE_COUNT_INFO="$FILE_COUNT_INFO, printing all directory counts..."
+  fi
+
+  print -- "$FILE_COUNT_INFO\n"
+
+  for DIRECTORY in $DIRECTORIES; do
+
+    if [[ -d "$DIRECTORY" ]];  then
+
+      local FILES=($DIRECTORY/*$PATTERN)
+      local -i FILE_COUNT=${#FILES}
+
+      if [[ "$SPECIFIED_COUNT" == "" ]]; then
+        if (( FILE_COUNT == 1)); then
+          print -- "$DIRECTORY has 1 file"
+        else
+          print -- "$DIRECTORY has $FILE_COUNT files"
+        fi
+      elif (( FILE_COUNT != EXPECTED_COUNT )); then
+        if (( FILE_COUNT == 1)); then
+          print -- "$DIRECTORY has 1 file"
+        else
+          print -- "$DIRECTORY has $FILE_COUNT files"
+        fi
+      fi
+
+    fi
+
+  done
+
+}
+
+fcount "$@"
